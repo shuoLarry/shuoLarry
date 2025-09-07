@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>个人简历</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="identity">
+          <div class="avatar">
+            <img src="../img/1.jpg" alt="头像" />
+          </div>
+          <div>
+            <h1 class="name">王硕</h1>
+            <p class="title">博士研究生在读 / 光电动态精密测量技术及仪器</p>
+            <ul class="contacts" aria-label="联系方式">
+              <li>邮箱：shuowang@buaa.edu.cn</li>
+              <li>电话：+86 180-6605-7052</li>
+              <li>地址：北京海淀 · 北京航空航天大学/仪器科学与光电工程学院</li>
+              <li>籍贯：<a href="#" rel="noopener">河南商丘</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="页面导航">
+          <button id="themeToggle" class="btn ghost" type="button" title="切换主题">🌓</button>
+          <a href="#about">简介</a>
+          <a href="#education">教育经历</a>
+          <a href="#publications">学术成果</a>
+          <a href="#projects">科研项目</a>
+          <a href="#service">学术兼职</a>
+          <a href="#activities">社会活动</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="about" class="card">
+        <h2>个人简介</h2>
+        <p>
+          主要从事于结构光三维重建与测量、光栅相位三维测量误差建模等研究方向。擅长光学系统设计与分析、图像处理与分析、光电测量技术等领域。长期目标是推动光电动态精密测量技术的发展，提升测量精度与效率。
+        </p>
+      </section>
+
+      <section id="education" class="card">
+        <h2>教育经历</h2>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-head">
+              <span class="when">2018 – 2021</span>
+              <span class="where">河南省商丘市第一高级中学</span>
+            </div>
+            <div class="timeline-body">普通高中毕业</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-head">
+              <span class="when">2021 – 2025</span>
+              <span class="where">南京航空航天大学 · 光电信息科学与工程 · 工学学士</span>
+            </div>
+            <div class="timeline-body">主修：工程光学、图像处理与分析、光电子学等；GPA：4.0/5.0<br>毕业论文：基于LightTools软件进行大范围组合照明系统设计（校优秀毕业论文二等奖）</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-head">
+              <span class="when">2025 – 至今</span>
+              <span class="where">北京航空航天大学 · 仪器科学与技术 · 博士研究生在读</span>
+            </div>
+            <div class="timeline-body">研究方向：光电动态精密测量技术及仪器</div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="publications" class="card">
+        <h2>学术成果</h2>
+        <ul class="list">
+          <li>
+            <span class="pub-title">国家发明专利：一种面向无人机自主着陆的位姿测量方法</span>，王硕，刘沛锋，周哲远，徐诚，公开号：CN120198491A，2025.
+            <span class="tags"><span class="tag">专利</span></span>
+          </li>
+          <li>
+            <span class="pub-title">软著：日盲区紫外无人机姿态测算平台 V1.0</span>，王硕，周哲远，陈酉翼，刘沛锋，登记号：2025SR0238480，2025.
+            <span class="tags"><span class="tag">软件著作权</span></span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="projects" class="card">
+        <h2>科研项目</h2>        
+        <h3>本科阶段</h3>
+        <ul class="list">
+          <li>
+            <div class="row"><span class="project-title">江苏省大学生创新训练计划项目</span><span class="when">2023 – 2024</span></div>
+            <div class="muted">项目名称：双波段视觉信息融合的无人机着降引导技术 · 角色：负责人</div>
+            <p>设计并实现了一套基于双波段视觉的无人机自主着陆导引系统，获2025数字中国创新大赛低空经济赛道三等奖（国家发改委、工信部等5部门）。</p>
+          </li>
+          <li>
+            <div class="row"><span class="project-title">校级重点大学生创新训练计划项目</span><span class="when">2024 – 2025</span></div>
+            <div class="muted">项目名称：光电智能导引跟踪系统 · 角色：主要成员</div>
+            <p>参与开发光电导引跟踪系统，完成图像处理算法的实现，校优秀结题。</p>
+          </li>
+          <li>
+            <div class="row"><span class="project-title">校级重点大学生创新训练计划项目</span><span class="when">2024 – 2025</span></div>
+            <div class="muted">项目名称：基于编码孔径的三维成像实验设计 · 角色：主要成员</div>
+            <p>参与编码孔径三维成像的光路设计与算法实现，校优秀结题，获第十届全国大学生物理实验竞赛一等奖（教育部、中国物理学会、北京航空航天大学）。</p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="service" class="card">
+        <h2>学术兼职</h2>
+        <ul class="list two-col">
+          <li>中国自动化学会学生会员</li>
+          <li>中国宇航学会学生会员</li>
+          <li>江苏省人工智能学会学生会员</li>
+          <li>第八届全国中学生物理学术创新竞赛裁判</li>
+        </ul>
+      </section>
+
+      <section id="activities" class="card">
+        <h2>社会活动</h2>
+        <ul class="list">
+          <li>学生工作：曾任班级团支部书记、学院新媒体工作室主任、科协副主席</li>
+          <li>创新创业：创建寻访天空创新科普团队，获2023江苏省大学生暑期社会实践优秀案例</li>
+        </ul>
+      </section>
+    </main>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="返回顶部">▲</button>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> 姓名. 本页支持打印与深色模式。</small>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
+

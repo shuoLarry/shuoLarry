@@ -1,0 +1,173 @@
+:root {
+  --bg: #0b0c10;
+  --text: #e5e7eb;
+  --muted: #9aa0a6;
+  --card: #111827;
+  --border: #1f2937;
+  --accent: #4f46e5;
+  --accent-2: #22d3ee;
+  --avatar-width: 150px;       /* 头像宽度 */
+  --avatar-height: 160px;      /* 头像高度（适合证件照比例） */
+  --avatar-radius: 12px;       /* 矩形圆角，可改为 0 为直角 */
+  --avatar-fit: cover;         /* 填充模式，避免空白 */
+  --avatar-position: center top; /* 居中且靠上显示，避免切到下巴 */
+  color-scheme: dark light;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8fafc;
+    --text: #0f172a;
+    --muted: #475569;
+    --card: #ffffff;
+    --border: #e5e7eb;
+    --accent: #4f46e5;
+    --accent-2: #06b6d4;
+  }
+}
+
+/* Light/Dark override by class */
+.theme-light {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --card: #ffffff;
+  --border: #e5e7eb;
+}
+.theme-dark {
+  --bg: #0b0c10;
+  --text: #e5e7eb;
+  --muted: #9aa0a6;
+  --card: #111827;
+  --border: #1f2937;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1440px, 98%);
+  margin: 0 auto;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: saturate(180%) blur(10px);
+  background: color-mix(in oklab, var(--bg), transparent 20%);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+.header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+.identity { display: flex; gap: 1rem; align-items: center; }
+.avatar { width: var(--avatar-width); height: var(--avatar-height); border-radius: var(--avatar-radius); overflow: hidden; background: var(--card); border: 1px solid var(--border); }
+.avatar img { width: 100%; height: 100%; object-fit: var(--avatar-fit); object-position: var(--avatar-position); display: block; }
+
+@media (max-width: 640px) { .avatar { --avatar-width: 100px; --avatar-height: 120px; } }
+.name { margin: 0; font-size: 1.4rem; letter-spacing: 0.2px; }
+.title { margin: 0.15rem 0 0.35rem; color: var(--muted); }
+.contacts { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; padding: 0; margin: 0; list-style: none; color: var(--muted); }
+.contacts a { color: inherit; text-decoration: none; }
+
+.main-nav { display: flex; gap: 1rem; align-items: center; }
+.main-nav a { color: var(--text); text-decoration: none; padding: 0.4rem 0.6rem; border-radius: 8px; }
+.main-nav a:hover { background: color-mix(in oklab, var(--accent), transparent 85%); }
+
+.btn {
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+}
+.btn.ghost { background: transparent; }
+
+/* Sections */
+main { padding: 1.2rem 0 2rem; }
+/* 滚动定位偏移，补偿固定header的高度 */
+html {
+  scroll-padding-top: 8rem;
+  scroll-behavior: smooth;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem;
+  margin: 2rem 0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
+.card h2 { margin: 0 0 0.8rem; font-size: 1.25rem; }
+.muted { color: var(--muted); font-size: 0.95rem; }
+
+/* Lists */
+.list { margin: 0; padding: 0 0 0 1rem; }
+.list li { margin: 0.4rem 0; }
+.list.two-col { columns: 2; column-gap: 2rem; }
+@media (max-width: 720px) { .list.two-col { columns: 1; } }
+
+/* Timeline */
+.timeline { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--border); }
+.timeline-item { padding: 0.6rem 0 0.6rem 1rem; position: relative; }
+.timeline-item::before { content: ""; position: absolute; left: -6px; top: 1.1rem; width: 10px; height: 10px; background: var(--accent-2); border-radius: 50%; box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent-2), transparent 70%); }
+.timeline-head { display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: baseline; }
+.timeline-head .when { color: var(--muted); font-feature-settings: "tnum" 1; }
+.timeline-head .where { font-weight: 600; }
+
+/* Publications */
+.pub-title { font-weight: 600; }
+.pub-venue { color: var(--muted); }
+.tags { margin-left: 0.5rem; }
+.tag { display: inline-block; padding: 0.05rem 0.45rem; border-radius: 999px; border: 1px solid var(--border); background: color-mix(in oklab, var(--accent), transparent 90%); font-size: 0.8rem; margin-right: 0.25rem; color: var(--text); }
+
+/* Project */
+.row { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 0.2rem; }
+.project-title { font-weight: 600; }
+.muted { margin-top: 0; margin-bottom: 0.3rem; }
+.list li p { margin-top: 0.2rem; margin-bottom: 0.8rem; }
+
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0; pointer-events: none; transform: translateY(12px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.back-to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--border); padding: 1.2rem 0 3rem; color: var(--muted); }
+
+/* Print */
+@media print {
+  .site-header, .back-to-top, #themeToggle { display: none !important; }
+  body { background: #fff; color: #000; }
+  .card { box-shadow: none; border-color: #ddd; }
+}
+
+
